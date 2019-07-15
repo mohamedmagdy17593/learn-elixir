@@ -21,6 +21,7 @@
                         'Elixir.MediumGraphqlApiWeb.Router',
                         'Elixir.MediumGraphqlApiWeb.Router.Helpers',
                         'Elixir.MediumGraphqlApiWeb.Schema',
+                        'Elixir.MediumGraphqlApiWeb.Schema.SessionType',
                         'Elixir.MediumGraphqlApiWeb.Schema.UserType',
                         'Elixir.MediumGraphqlApiWeb.UserSocket']},
               {registered,[]},

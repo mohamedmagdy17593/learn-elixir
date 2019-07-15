@@ -6,7 +6,10 @@ defmodule MediumGraphqlApiWeb.Resolvers.UserResolver do
   end
 
   def register_user(_, %{input: user}, _) do
-    IO.inspect(user)
-    IO.inspect(Accounts.create_user(user))
+    Accounts.create_user(user)
+  end
+
+  def login_user(_, _, _) do
+    {:ok, %{token: "", user: Accounts.get_user!(1)}}
   end
 end

@@ -101,4 +101,14 @@ defmodule MediumGraphqlApi.Accounts do
   def change_user(%User{} = user) do
     User.changeset(user, %{})
   end
+
+  def login(%{email: email, password: password}) do
+    user = Repo.get_by(User, email: String.downcase(email))
+
+    if user && Argon2.check_pass(password, user.password_hash) do
+      {:ok, user}
+    else
+      {:error, "incorrect login credentions "}
+    end
+  end
 end
